@@ -15,6 +15,11 @@ let bgImage = null;
 // Start camera
 async function startCamera() {
   try {
+    video.addEventListener('loadedmetadata', () => {
+  video.removeAttribute('width');
+  video.removeAttribute('height');
+});
+
     stream = await navigator.mediaDevices.getUserMedia({ video: true });
     video.srcObject = stream;
     video.play();
@@ -173,3 +178,4 @@ retryBtn.addEventListener('click', () => {
   downloadBtn.classList.add('hidden');
   retryBtn.classList.add('hidden');
 });
+
