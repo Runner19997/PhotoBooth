@@ -72,12 +72,28 @@ body {
 .buttons { margin-top: 15px; display: flex; justify-content: space-around; }
 button { cursor: pointer; padding: 8px 14px; font-weight: bold; border-radius: 10px; }
 
+/* ✅ FIX: Prevent phone camera stretch */
+video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: auto;
+}
+
+/* 📱 Extra safeguard for mobile */
 @media (max-width: 768px) {
-  video {
-    width: 100%;
-    height: auto !important;
-    object-fit: cover !important;
+  .photo-frame {
     aspect-ratio: auto !important;
+    height: auto !important;
+  }
+
+  video {
+    object-fit: contain !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 100% !important;
   }
 }
+
+
 
