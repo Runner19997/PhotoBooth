@@ -68,7 +68,10 @@ body {
   text-align: left;
 }
 
-/* 📱 Fix for stretched camera feed on mobile devices */
+
+.buttons { margin-top: 15px; display: flex; justify-content: space-around; }
+button { cursor: pointer; padding: 8px 14px; font-weight: bold; border-radius: 10px; }
+
 @media (max-width: 768px) {
   video {
     width: 100%;
@@ -77,10 +80,4 @@ body {
     aspect-ratio: auto !important;
   }
 }
-
-
-
-
-.buttons { margin-top: 15px; display: flex; justify-content: space-around; }
-button { cursor: pointer; padding: 8px 14px; font-weight: bold; border-radius: 10px; }
 
